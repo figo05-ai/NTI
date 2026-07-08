@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - Lecture 3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            padding-bottom: 100px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 15px 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            direction: ltr; 
+        }
+
+        .logo img {
+            height: 100px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #007bff;
+        }
+
+        .header-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .header-btn:hover {
+            background-color: #0056b3;
+        }
+
+        main {
+            direction: rtl; 
+            padding: 50px 5%;
+        }
+
+        .columns-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+            color: #13a1f3;
+        }
+
+        .card p {
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            direction: rtl;
+            background-color: #222;
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-form input {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .footer-form button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .footer-form button:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .columns-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hide-on-mobile {
+                display: none;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+                padding: 15px 5%;
+            }
+            
+            body {
+                padding-bottom: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTURh9cZPRjJzaoYkddeDN6L-i0fhxP3x0ghjSRJf19xg&s=10" alt="Logo">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">About</a>
+        </nav>
+        <button class="header-btn">Contact Us</button>
+    </header>
+
+    <main>
+        <div class="columns-container">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPySk8HfRCIJLo_kO2dKP1bb6Pron5xN2hF_ei_TxuYg&s=10" alt="صورة 1">
+                <h2>M4</h2>
+                <p>احلي عربية</p>
+            </div>
+
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIag7T1TqolrZCHrI_PxmNHmuywFYYG2PcpPZK1Wa-Kg&s=10" alt="صورة 2">
+                <h2>Code</h2>
+                <p>انا كل ليلة مع كود</p>
+            </div>
+
+            <div class="card hide-on-mobile">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYVVS9TbAgR2-n7gM08TKhN2npDrnXyP5b5mX8E3dqZw&s=10" alt="صورة 3">
+                <h2>Mony</h2>
+                <p>ارزقنا يارب</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">الرئيسية</a>
+            <a href="#">من نحن</a>
+            <a href="#">سياسة الخصوصية</a>
+        </div>
+        <div class="footer-form">
+            <input type="email" placeholder="أدخل بريدك الإلكتروني">
+            <button>اشترك الآن</button>
+        </div>
+    </footer>
+
+</body>
+</html>
